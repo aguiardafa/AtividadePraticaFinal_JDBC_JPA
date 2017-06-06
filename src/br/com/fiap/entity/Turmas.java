@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "turma")
+@Table(name = "turmas")
 public class Turmas implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -65,4 +65,9 @@ public class Turmas implements Serializable {
 		this.curso = curso;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return (" => " +getId() + " - " + getCodigo() + " - " + getPeriodo());
+	}
 }

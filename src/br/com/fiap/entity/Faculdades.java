@@ -15,7 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "faculdade")
+@Table(name = "faculdades")
 public class Faculdades implements Serializable {
 
 	/**
@@ -69,4 +69,9 @@ public class Faculdades implements Serializable {
 		this.cursos = cursos;
 	}
 
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return getId() + " - " + getNome() + " - " + getCNPJ();
+	}
 }

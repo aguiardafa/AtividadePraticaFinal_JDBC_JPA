@@ -1,7 +1,7 @@
 package br.com.fiap.entity;
 
 import java.io.Serializable;
-import java.util.LinkedHashSet;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "curso")
+@Table(name = "cursos")
 public class Cursos implements Serializable {
 
 	/**
@@ -44,7 +44,7 @@ public class Cursos implements Serializable {
 	private Faculdades faculdade;
 	
 	@OneToMany(cascade=CascadeType.ALL,fetch=FetchType.LAZY,mappedBy="curso") 
-	private Set<Turmas> turmas = new LinkedHashSet<Turmas>();
+	private Set<Turmas> turmas = new HashSet<Turmas>();
 
 	public int getId() {
 		return id;
@@ -91,5 +91,11 @@ public class Cursos implements Serializable {
 	}
 	public void setTurmas(Set<Turmas> turmas) {
 		this.turmas = turmas;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return (" => " + getId() + " - " + getCodigo() + " - " + getDescricao() + " - R$ " + getValor());
 	}
 }
